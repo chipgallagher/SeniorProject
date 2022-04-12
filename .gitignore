@@ -1,9 +1,4 @@
-*.exe
-*.pdb
-*.idb
-*.ilk
-*.tlog
-*.ipch
-**\VKtest\x64
-**\vktest\vktest\x64
-**\vktest\.vs
+**/vktest/.vs
+**/vktest/debug
+**/x64
+**/x86
