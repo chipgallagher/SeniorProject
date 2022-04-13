@@ -22,9 +22,11 @@
     <ClCompile Include="FirstApp.cpp" />
     <ClCompile Include="FirstApp.hpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pipeline.cpp" />
     <ClCompile Include="vulk_window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="pipeline.hpp" />
     <ClInclude Include="window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

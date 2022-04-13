@@ -1,5 +1,6 @@
 #pragma once
 #include "window.hpp"
+#include "pipeline.hpp"
 
 namespace vulkan {
 	class FirstApp {
@@ -12,5 +13,6 @@ namespace vulkan {
 
 	private: 
 		VulkWindow VulkWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
+		pipeline pipeline{ "shaders/shader.vert", "shaders/shader.frag" };
 	};
 }
