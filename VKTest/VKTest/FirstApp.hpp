@@ -14,6 +14,6 @@ namespace vulkan {
     private:
         VulkWindow VulkWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
         VulkDevice VulkDevice{ VulkWindow };
-        pipeline Pipeline{VulkDevice, "shaders/vert.spv", "shaders/frag.spv", pipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT) };
+        VulkPipeline VulkPipeline{VulkDevice, "shaders/vert.spv", "shaders/frag.spv", VulkPipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT) };
     };
 }

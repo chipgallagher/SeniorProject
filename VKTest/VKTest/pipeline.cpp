@@ -6,12 +6,12 @@
 
 namespace vulkan {
 
-	pipeline::pipeline(VulkDevice& device, const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo) : device{ device } {
+	VulkPipeline::VulkPipeline(VulkDevice& device, const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo) : device{ device } {
 		createPipeline(vertFilepath, fragFilepath, configInfo);
 	}
 
 	
-	std::vector<char> pipeline::readFile(const std::string& filepath) {
+	std::vector<char> VulkPipeline::readFile(const std::string& filepath) {
 
 		std::ifstream file(filepath, std::ios::ate | std::ios::binary);
 
@@ -32,7 +32,7 @@ namespace vulkan {
 
 	}
 
-	void pipeline::createPipeline(const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo) {
+	void VulkPipeline::createPipeline(const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo) {
 		auto vertCode = readFile(vertFilepath);
 		auto fragCode = readFile(fragFilepath);
 
@@ -40,7 +40,7 @@ namespace vulkan {
 		std::cout << "Frag Shader Code Size: " << fragCode.size() << '\n';
 	}
 
-	void pipeline::createShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule) {
+	void VulkPipeline::createShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule) {
 		VkShaderModuleCreateInfo createInfo{};
 		createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
 		createInfo.codeSize = code.size();
@@ -51,7 +51,7 @@ namespace vulkan {
 		}
 	}
 
-	PipelineConfigInfo pipeline::defaultPipelineConfigInfo(std::uint32_t width, std::uint32_t height) {
+	PipelineConfigInfo VulkPipeline::defaultPipelineConfigInfo(std::uint32_t width, std::uint32_t height) {
 		PipelineConfigInfo configInfo{};
 
 		return configInfo;

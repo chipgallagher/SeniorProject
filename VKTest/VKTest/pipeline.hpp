@@ -8,14 +8,14 @@ namespace vulkan {
 
 	struct PipelineConfigInfo {};
 
-	class pipeline {
+	class VulkPipeline {
 	public:
-		pipeline(VulkDevice& device, const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo);
+		VulkPipeline(VulkDevice& device, const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo);
 
-		~pipeline(){}
+		~VulkPipeline(){}
 
-		pipeline(const pipeline&) = delete;
-		void operator=(const pipeline&) = delete;
+		VulkPipeline(const VulkPipeline&) = delete;
+		void operator=(const VulkPipeline&) = delete;
 
 		static PipelineConfigInfo defaultPipelineConfigInfo(std::uint32_t width, std::uint32_t height);
 
