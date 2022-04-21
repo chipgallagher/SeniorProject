@@ -1,18 +1,19 @@
 #pragma once
-#include "window.hpp"
+#include "device.hpp"
 #include "pipeline.hpp"
+#include "window.hpp"
 
 namespace vulkan {
-	class FirstApp {
+    class FirstApp {
+    public:
+        static constexpr int WIDTH = 1920;
+        static constexpr int HEIGHT = 1080;
 
-	public:
-		static constexpr int WIDTH = 1920;
-		static constexpr int HEIGHT = 1080;
+        void run();
 
-		void run();
-
-	private: 
-		VulkWindow VulkWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
-		pipeline pipeline{ "shaders/shader.vert", "shaders/shader.frag" };
-	};
+    private:
+        VulkWindow VulkWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
+        VulkDevice VulkDevice{ VulkWindow };
+        pipeline Pipeline{VulkDevice, "shaders/vert.spv", "shaders/frag.spv", pipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT) };
+    };
 }
