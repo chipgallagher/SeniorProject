@@ -6,6 +6,7 @@ namespace vulkan {
 
 	FirstApp::FirstApp() {
 		createPipelineLayout();
+		createPipeline();
 		createCommandBuffers();
 	}
 
