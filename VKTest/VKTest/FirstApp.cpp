@@ -13,7 +13,7 @@ namespace vulkan {
 	FirstApp::~FirstApp() {
 		vkDestroyPipelineLayout(vkDevice.device(), pipelineLayout, nullptr);
 	}
-	
+
 	void FirstApp::run() {
 		while (!vkWindow.shouldClose()) {
 			glfwPollEvents();
@@ -34,7 +34,9 @@ namespace vulkan {
 	}
 
 	void FirstApp::createPipeline() {
-		auto pipelineConfig = VulkPipeline::defaultPipelineConfigInfo(vkSwapchain.width(), vkSwapchain.height());
+		//auto pipelineConfig = VulkPipeline::defaultPipelineConfigInfo(vkSwapchain.width(), vkSwapchain.height());
+		PipelineConfigInfo pipelineConfig{};
+		VulkPipeline::defaultPipelineConfigInfo(pipelineConfig, vkSwapchain.width(), vkSwapchain.height());
 		pipelineConfig.renderPass = vkSwapchain.getRenderPass();
 		pipelineConfig.pipelineLayout = pipelineLayout;
 		vkPipeline = std::make_unique<VulkPipeline>(vkDevice, "shaders/vert.spv", "shaders/frag.spv", pipelineConfig);
