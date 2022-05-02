@@ -24,11 +24,13 @@
     <ClCompile Include="FirstApp.hpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pipeline.cpp" />
-    <ClCompile Include="vulk_window.cpp" />
+    <ClCompile Include="swapchain.cpp" />
+    <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="device.hpp" />
     <ClInclude Include="pipeline.hpp" />
+    <ClInclude Include="swapchain.hpp" />
     <ClInclude Include="window.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
