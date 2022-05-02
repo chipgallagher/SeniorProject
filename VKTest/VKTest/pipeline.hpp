@@ -30,6 +30,8 @@ namespace vulkan {
 		VulkPipeline(const VulkPipeline&) = delete;
 		void operator=(const VulkPipeline&) = delete;
 
+		void bind(VkCommandBuffer commandBuffer);
+
 		static PipelineConfigInfo defaultPipelineConfigInfo(std::uint32_t width, std::uint32_t height);
 
 		
