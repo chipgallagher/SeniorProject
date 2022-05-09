@@ -6,3 +6,4 @@
 *.ipch
 **/VKtest/x64
 **/vktest/vktest/x64
+**/vktest/.vs
